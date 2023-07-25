@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Калькулятор</title>
+</head>
+<body>
+    <input type="text" id="expression" placeholder="Введите математическое выражение">
+    <button onclick="calculate()">Вычислить</button>
+    <p id="result"></p>
+
+    <script>
+        function calculate() {
+            const expression = document.getElementById("expression").value;
+            const resultElement = document.getElementById("result");
+
+            try {
+                const result = eval(expression);
+                resultElement.textContent = "Результат: " + result;
+            } catch (error) {
+                resultElement.textContent = "Ошибка в выражении!";
+            }
+        }
+    </script>
+</body>
+</html>
